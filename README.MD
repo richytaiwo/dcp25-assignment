@@ -7,7 +7,7 @@ Name: Richard Taiwo
 Student Number: C24375003
 
 # Screenshots
-[TEST] (images/Screenshot 2025-12-04 115539.png)
+! [TEST] (images/Screenshot 2025-12-04 115539.png)
 # Description of the project
 This assignment shows the whole data centric programming pipeline using Python, going from structured text files provided to us, to storing in a database, using data analysis tools and creating an interface that is easy to use.
 
@@ -121,5 +121,6 @@ Even though it was quite easy in this project, loading a database into a datafra
 ## 3. UI Programming
 
 Using Tkinter made me learn about how to layout my screen, how to create pop windows and how to bind events to other events. This assignment helped me learn how to crreate a Python app that is interactive.
+
 
 
