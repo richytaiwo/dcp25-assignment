@@ -37,7 +37,7 @@ Close the Tkinter window.
 # How it works:
 My assignment has four major parts that allows it to work.
 
-1. File loading and parsing
+## 1. File loading and parsing
 This was added in my parser_module.py file
 
 Recursive File Discovery
@@ -50,7 +50,7 @@ Tune Parsing
 All tunes begin with an X: line, so a tune is parsed into a dictionary with the tune index, which is the X, the title, alternate title, tune type, key and notation.
 parse_all_tunes() oricesses the complere files, and catches tune boundaries, calling parse_tune() to change each tune to a dictionary.
 
-2. Darabase Storage
+## 2. Database Storage
 This was added in database_module.py
 
 I created my tables in SQLITE using standard table format.
@@ -58,8 +58,8 @@ I created my tables in SQLITE using standard table format.
 Saving Tunes
 save_tunes_to_db() drops and remakes the entire database, making sure that the loading is smooth each time. It goes through every parsed tune dictionary and puts them into SQLite.
 
-3. Data Loading and Analysis
-This was added in analysis_modulel.py
+## 3. Data Loading and Analysis
+This was added in analysis_module.py
 
 Pandas Integration
 load_tunes_df() loads the entire tunes table into a dataframe.
@@ -67,7 +67,7 @@ load_tunes_df() loads the entire tunes table into a dataframe.
 Analysis Functions
 I created this module to include functions that will help me list all the books, get the tunes by the book, get all the tunes, look for tunes through their title, key or type and getting full tune info.
 
-4. Interactive UI.
+## 4. Interactive UI.
 I added this in ui_module.py
 
 Tkinter UI.
@@ -86,12 +86,17 @@ When a user double clicks a tune, it opens a popup windown with extra details.
 | Files | Source |
 |-----------|-----------|
 | main.py | Self written |
-| test.py | Modified from [reference]() |
-| test.py | From [reference]() |
+| parser_module.py | Modified from [https://docs.python.org/3/library/os.html#os.walk]() |
+| database_module.py | Self written |
+| analysis_module.py | Self written |
+| ui_module.py | Modified from [https://youtu.be/TuLxsvK4svQ?si=01X3-PQtxnZCcwTV]() |
+| build_database.py | Modified from [https://sqlite.org/docs.html]() |
+| abc__books/ | Provided dataset |
 
 # References
-* Item 1
-* Item 2
+* https://docs.python.org/3/library/os.html#os.walk
+* https://youtu.be/TuLxsvK4svQ?si=01X3-PQtxnZCcwTV
+* https://sqlite.org/docs.html 
 
 # What I am most proud of in the assignment
 
@@ -171,5 +176,6 @@ This is a table:
 |Some stuff | Some more stuff in this column |
 
 |Some stuff | Some more stuff in this column |
+
 
 
