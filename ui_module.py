@@ -1,5 +1,5 @@
 import tkinter as tk #base tk widgets
-from tkinter import tkk #theme widgets
+from tkinter import ttk #theme widgets
 from tkinter import messagebox #for error messages
 
 #main ui
@@ -14,9 +14,9 @@ def start_ui(conn, analysis_module):
     root.geometry("1100x650")             # Window size (width x height)
 
 
-#left sidebar
+    #left sidebar
 
-sidebar = tk.Frame(root, width=220, bg="#f0f0f0")  #left panel container
+    sidebar = tk.Frame(root, width=220, bg="#f0f0f0")  #left panel container
     sidebar.pack(side="left", fill="y")                #attatch and stretch vertically
 
     tk.Label(
@@ -25,7 +25,7 @@ sidebar = tk.Frame(root, width=220, bg="#f0f0f0")  #left panel container
         bg="#f0f0f0",
         font=("Arial", 14)
     ).pack(pady=8)  #header
-    
+
     #listbox showing numbers
     book_listbox = tk.Listbox(sidebar, width=20, font=("Arial", 12))
     book_listbox.pack(fill="y", expand=True, padx=8, pady=6)
@@ -87,10 +87,23 @@ sidebar = tk.Frame(root, width=220, bg="#f0f0f0")  #left panel container
         #matching tunes into treeview
         for t in tunes:
             tree.insert("", tk.END, values=(t["x"], t["title"], t["tune_type"], t["key"]))
+
+    #search command acc showsw up
+    tk.Button(search_frame, text="Search", command=on_search).pack(side="left", padx=4)
+    
+    #function referenced by button
+    def show_all():
+        for item in tree.get_children():
+            tree.delete(item)
+        header_label.config(text="All Tunes")
+        tunes = analysis_module.get_all_tunes(conn)
+        for t in tunes:
+            tree.insert("", tk.END, values=(t["x"], t["title"], t["tune_type"], t["key"]))
+
     tk.Button(search_frame, text="Show All", command=show_all).pack(side="left", padx=4)
 
     #treeview display
-    
+        
     columns = ("X", "Title", "Type", "Key")  #table column names
 
     tree = ttk.Treeview(
@@ -107,7 +120,7 @@ sidebar = tk.Frame(root, width=220, bg="#f0f0f0")  #left panel container
         
     
     #book selection handler
-    
+        
     def on_book_select(event):
         #clear tree on each selection change
         for item in tree.get_children():
@@ -137,7 +150,7 @@ sidebar = tk.Frame(root, width=220, bg="#f0f0f0")  #left panel container
     
 
     #double click handler
-    
+
     def show_tune_details(event):
         #find currently focused in treeview
         item = tree.focus()
@@ -181,6 +194,5 @@ sidebar = tk.Frame(root, width=220, bg="#f0f0f0")  #left panel container
 #ui launch
 def launch_ui(conn, analysis_module):
     
-    #main.py can simply call launch_ui().
-    
+    #main.py can simply call launch_ui(). 
     start_ui(conn, analysis_module)

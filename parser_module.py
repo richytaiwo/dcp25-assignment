@@ -81,6 +81,8 @@ def parse_all_tunes(lines):
 
     for line in lines:
         
+        #start of new tune
+        if line.startswith('X:'):
         #if new tune header starts with x start a new block
             #if creating a tune, start a new one
             if current:

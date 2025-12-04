@@ -15,7 +15,7 @@ for filepath, book in load_abc_files('abc_books'):
     #read the abc file line by line
     lines = load_abc_file(filepath)
 
-    # Parse all tunes found in this file into structured dictionaries
+    #paarse all tunes found in this file into structured dictionaries
     file_tunes = parse_all_tunes(lines)
 
     #process each tune parrsed from this file
@@ -45,7 +45,7 @@ print("Saved tunes to tunes.db")
 
 #open db connection and launch ui 
 
-# create connection to db
+#create connection to db
 conn = sqlite3.connect("tunes.db")
 
 #launch ui
