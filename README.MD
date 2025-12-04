@@ -2,9 +2,9 @@
 
 - [Assignment Brief](assignment.md)
 
-Name:
+Name: Richard Taiwo
 
-Student Number: 
+Student Number: C24375003
 
 # Screenshots
 
