@@ -9,11 +9,35 @@ Student Number: C24375003
 # Screenshots
 
 # Description of the project
+This assignment shows the whole data centric programming pipeline using Python, going from structured text files provided to us, to storing in a database, using data analysis tools and creating an interface that is easy to use.
 
+My aim in this assignment is to:
+-Recursively load the ABC files from the multiple folders given.
+-Parse their contents into structures Python dictionaries.
+-Keep the results in a SQLite database.
+-Load the data using Pandas for analysis.
+-Create a UI using TKinter for interacting, searching and browsing.
+
+My application lets individuals search for tunes by book, by titlle, type, kep and see the full ABC notation in a window that pops up when the user double clicks. The system uses parsing, data modelling, storage, analytics and a UI, which completes all the goals I was aiming for.
 # Instructions for use
+As long as the abc_books directory has one more more files in either the 1 or 2 folder, my application will run smoothly.
 
+To run the main application, open terminal and type:
+python main.py
+This script will load and parse the ABC files, put the parsed tunes into tunes.db and opens the Tkinter UI.
+or just click the run button on VSCode.
+
+To navigate the UI:
+The left sidebar has all the folders found in the abc_books. directory. Clicking a book will allow you to load all of the tunes from that book.
+The search bar allows youto search by title, the tune type or musical key, it is not case sensitive.
+Double clicking a tune will open another popup that shows the title, type, key and full abc notation.
+
+To exit the program:
+Close the Tkinter window.
 # How it works:
+My assignment has four major parts that allows it to work.
 
+File loading and parsing
 # List of files in the project
 
 | Files | Source |
@@ -104,3 +128,4 @@ This is a table:
 |Some stuff | Some more stuff in this column |
 
 |Some stuff | Some more stuff in this column |
+
