@@ -37,7 +37,50 @@ Close the Tkinter window.
 # How it works:
 My assignment has four major parts that allows it to work.
 
-File loading and parsing
+1. File loading and parsing
+This was added in my parser_module.py file
+
+Recursive File Discovery
+My base_dir goes through all of the abc_books directory using the os.walk function, catching all of the .abc files and getting their book number from their parent folder.
+
+ABC File Reading
+load_abc_file scans each file with latin-1 encoding to keep different characters used in older tunes.
+
+Tune Parsing
+All tunes begin with an X: line, so a tune is parsed into a dictionary with the tune index, which is the X, the title, alternate title, tune type, key and notation.
+parse_all_tunes() oricesses the complere files, and catches tune boundaries, calling parse_tune() to change each tune to a dictionary.
+
+2. Darabase Storage
+This was added in database_module.py
+
+I created my tables in SQLITE using standard table format.
+
+Saving Tunes
+save_tunes_to_db() drops and remakes the entire database, making sure that the loading is smooth each time. It goes through every parsed tune dictionary and puts them into SQLite.
+
+3. Data Loading and Analysis
+This was added in analysis_modulel.py
+
+Pandas Integration
+load_tunes_df() loads the entire tunes table into a dataframe.
+
+Analysis Functions
+I created this module to include functions that will help me list all the books, get the tunes by the book, get all the tunes, look for tunes through their title, key or type and getting full tune info.
+
+4. Interactive UI.
+I added this in ui_module.py
+
+Tkinter UI.
+The Ui has:
+-A left sidebar, which gives a list of books
+-A search bar, which has search and show all buttons.
+-A main table which displays the tunes
+-A popup window that opens on double clicks to give the full tune details.
+
+When a user selects a book, the query executes and tunes are shown.
+When a user searches something, the results update dynamically.
+When a user double clicks a tune, it opens a popup windown with extra details.
+
 # List of files in the project
 
 | Files | Source |
@@ -128,4 +171,5 @@ This is a table:
 |Some stuff | Some more stuff in this column |
 
 |Some stuff | Some more stuff in this column |
+
 
