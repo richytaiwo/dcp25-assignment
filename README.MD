@@ -8,6 +8,7 @@ Student Number: C24375003
 
 # Screenshots
 ![](https://github.com/richytaiwo/dcp25-assignment/blob/main/images/Screenshot%202025-12-04%20115402.png)
+![](https://github.com/richytaiwo/dcp25-assignment/blob/main/images/Screenshot%202025-12-04%20115539.png)
 # Description of the project
 This assignment shows the whole data centric programming pipeline using Python, going from structured text files provided to us, to storing in a database, using data analysis tools and creating an interface that is easy to use.
 
@@ -121,6 +122,7 @@ Even though it was quite easy in this project, loading a database into a datafra
 ## 3. UI Programming
 
 Using Tkinter made me learn about how to layout my screen, how to create pop windows and how to bind events to other events. This assignment helped me learn how to crreate a Python app that is interactive.
+
 
 
 
