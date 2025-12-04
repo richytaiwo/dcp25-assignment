@@ -3,10 +3,6 @@ import sqlite3 #sqlite for interacting with .db files
 #create or open connection to database
 
 def create_connection(db_name="tunes.db"):
-    """
-    Create a connection to the SQLite database.
-    If the database file does not exist, SQLite will create it.
-    """
     conn = sqlite3.connect(db_name)  #open or create db file
     return conn #return active connection object
 
@@ -14,10 +10,6 @@ def create_connection(db_name="tunes.db"):
 #create tune tables from scratch drop and create
 
 def create_tunes_table(conn):
-    """
-    Drops the 'tunes' table if it exists and recreates it with the schema
-    expected by the rest of the application.
-    """
     cursor = conn.cursor()  #cursor does sql cmds
 
     #remove table if already exists so we have a clean schema
@@ -42,10 +34,6 @@ def create_tunes_table(conn):
     #saves lsit of tune directories to the database
     
 def save_tunes_to_db(tunes, db_name="tunes.db"):
-    """
-    Saves a list of parsed tune dictionaries into the SQLite database.
-    Recreates the table before inserting anything to guarantee schema matches.
-    """
     conn = sqlite3.connect(db_name)  #open db file
     cursor = conn.cursor()           #cursor for sql inject
 

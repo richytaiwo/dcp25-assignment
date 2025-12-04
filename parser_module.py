@@ -3,10 +3,6 @@ import os # walking directories and file paths
 #look for all .abc files in a directory
 
 def load_abc_files(base_dir):
-    """
-    Recursively find all .abc files under base_dir.
-    Returns a list of tuples: (filepath, book_folder_name)
-    """
     abc_files = []  # collect filepath, book pairs
     
     
@@ -30,10 +26,6 @@ def load_abc_files(base_dir):
 #load contents into abc file
 
 def load_abc_file(filename):
-    """
-    Read an ABC file and return its lines as a list of strings.
-    Uses latin-1 because many older ABC collections contain extended characters.
-    """
     with open(filename, 'r', encoding='latin-1') as f:
         lines = f.readlines()  # read file into list of lines
     return lines
@@ -42,17 +34,6 @@ def load_abc_file(filename):
 #parse a single tunes abc lines into structured directory
 
 def parse_tune(tune_lines):
-    """
-    Parse a list of lines representing a single ABC tune.
-    Extracts:
-        - X: tune index
-        - T: main title
-        - second T: alternate title (optional)
-        - R: tune type (reel, jig, etc.)
-        - K: key signature
-    Returns a dictionary containing these fields and full notation.
-    """
-
     #default tune structure
     tune = {
         'X': None,
@@ -95,12 +76,6 @@ def parse_tune(tune_lines):
 #parse entire abc file with alot of tunes
 
 def parse_all_tunes(lines):
-    """
-    Parse all tunes from a block of ABC file lines.
-    ABC format typically starts a tune when a line begins with 'X:'.
-    Tunes may be separated by a blank line, but the X: indicator is the primary signal.
-    Returns a list of tune dictionaries.
-    """
     tunes = []   # Final list of parsed tunes
     current = [] # Accumulates lines belonging to the current tune
 
